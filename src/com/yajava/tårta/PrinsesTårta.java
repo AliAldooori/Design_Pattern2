@@ -3,8 +3,6 @@ package com.yajava.tårta;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
-
-
     public class PrinsesTårta extends Tårta{
         private  String tårtbotten  ;
         private String visbyGrädde  ;
@@ -14,19 +12,19 @@ import java.beans.PropertyChangeSupport;
         private  String marsipanros ;
         private String florsocker ;
 
-
         private boolean bestalld ;
         private String status;
         private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
 
-        public PrinsesTårta(String amazing_princess, int i) {
-            this.tårtbotten = tårtbotten;
-            this.visbyGrädde = visbyGrädde;
-            this.vaniljkräm = vaniljkräm;
-            this.hallonsylt = hallonsylt;
-            this.marsipanlock = marsipanlock;
-            this.marsipanros = marsipanros;
-            this.florsocker = florsocker;
+        public PrinsesTårta() {
+            this.tårtbotten = "tårtbotten";
+            this.visbyGrädde = "visbyGrädde";
+            this.vaniljkräm = "vaniljkräm";
+            this.hallonsylt = "hallonsylt";
+            this.marsipanlock = "marsipanlock";
+            this.marsipanros = "marsipanros";
+            this.florsocker = "florsocker";
+
 
             this.propertyChangeSupport = propertyChangeSupport;
         }
@@ -95,6 +93,11 @@ import java.beans.PropertyChangeSupport;
             this.propertyChangeSupport = propertyChangeSupport;
         }
 
+
+        public boolean isBestalld() {
+            return bestalld;
+        }
+
         public void setBestalld(boolean bestalld) {
             boolean oldBestalld = this.bestalld;
             this.bestalld = bestalld;
@@ -118,18 +121,16 @@ import java.beans.PropertyChangeSupport;
 
         @Override
         public String toString() {
-            return "Prinsesstårta{" +
-                    "tårtbotten='" + tårtbotten + '\'' +
-                    ", visbyGrädde='" + visbyGrädde + '\'' +
-                    ", vaniljkräm='" + vaniljkräm + '\'' +
-                    ", hallonsylt='" + hallonsylt + '\'' +
-                    ", marsipanlock='" + marsipanlock + '\'' +
-                    ", marsipanros='" + marsipanros + '\'' +
-                    ", florsocker='" + florsocker + '\'' +
-                    ", bestalld=" + bestalld +
-                    ", status='" + status + '\'' +
-                    ", propertyChangeSupport=" + propertyChangeSupport +
-                    '}';
+            return "Prinsesstårta. Ingridienser och info:\n" +
+                    tårtbotten + ", " +
+                    visbyGrädde + ", " +
+                    vaniljkräm + ", " +
+                    hallonsylt + ", " +
+                    marsipanlock + ", " +
+                    marsipanros + ", " +
+                    florsocker +
+                    ", bestalld: " + bestalld +
+                    ", status: " + status;
         }
     }
 

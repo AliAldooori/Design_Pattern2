@@ -9,13 +9,3 @@ public class Main {
         skapandeMeny.Meny();
     }
 }
-/*
-public class Main {
-
-    public static void main(String[] args) throws InterruptedException {
-
-        // Create and run the application logic in BakeryManu
-        BakeryMenu bakeryMenu = new BakeryMenu();
-        bakeryMenu.runMenu();
-    }
-}*/

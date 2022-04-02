@@ -11,22 +11,22 @@ import java.beans.PropertyChangeSupport;
         private String kakao  ;
         private String  vaniljsocker ;
         private String salt  ;
-        private String ugnstemperatur  ;
-        private String  tid_i_ugn   ;
+        private int graderIUgnen ;
+        private int tidIUgnen  ;
         private boolean bestalld ;
         private String status;
         private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
 
-        public KladdKaka(int i) {
-            this.smör = smör;
-            this.strösocker = strösocker;
-            this.ägg = ägg;
-            this.vetemjöl = vetemjöl;
-            this.kakao = kakao;
-            this.vaniljsocker = vaniljsocker;
-            this.salt = salt;
-            this.ugnstemperatur = ugnstemperatur;
-            this.tid_i_ugn = tid_i_ugn;
+        public KladdKaka(int graderIUgnen, int tidIUgnen) {
+            this.smör = "smör";
+            this.strösocker = "strösocker";
+            this.ägg = "ägg";
+            this.vetemjöl = "vetemjöl";
+            this.kakao = "kakao";
+            this.vaniljsocker = "vaniljsocker";
+            this.salt = "salt";
+            this.graderIUgnen = graderIUgnen;
+            this.tidIUgnen = tidIUgnen;
 
             this.propertyChangeSupport = propertyChangeSupport;
         }
@@ -87,20 +87,20 @@ import java.beans.PropertyChangeSupport;
             this.salt = salt;
         }
 
-        public String getUgnstemperatur() {
-            return ugnstemperatur;
+        public int getGraderIUgnen() {
+            return graderIUgnen;
         }
 
-        public void setUgnstemperatur(String ugnstemperatur) {
-            this.ugnstemperatur = ugnstemperatur;
+        public void setGraderIUgnen(int graderIUgnen) {
+            this.graderIUgnen = graderIUgnen;
         }
 
-        public String getTid_i_ugn() {
-            return tid_i_ugn;
+        public int getTidIUgnen() {
+            return tidIUgnen;
         }
 
-        public void setTid_i_ugn(String tid_i_ugn) {
-            this.tid_i_ugn = tid_i_ugn;
+        public void setTidIUgnen(int tid_i_ugn) {
+            this.tidIUgnen = tid_i_ugn;
         }
 
         public boolean isBestalld() {
@@ -131,27 +131,22 @@ import java.beans.PropertyChangeSupport;
             this.propertyChangeSupport.firePropertyChange("KladdKaka levererat ", oldStatus, this.status);
         }
 
-        // Metod för att lägga till listner
         public void addPropertyChangeListner(PropertyChangeListener listener) {
             this.propertyChangeSupport.addPropertyChangeListener(listener);
         }
 
         @Override
         public String toString() {
-            return "Kladdkaka{" +
-                    "smör='" + smör + '\'' +
-                    ", strösocker='" + strösocker + '\'' +
-                    ", ägg='" + ägg + '\'' +
-                    ", vetemjöl='" + vetemjöl + '\'' +
-                    ", kakao='" + kakao + '\'' +
-                    ", vaniljsocker='" + vaniljsocker + '\'' +
-                    ", salt='" + salt + '\'' +
-                    ", ugnstemperatur='" + ugnstemperatur + '\'' +
-                    ", tid_i_ugn='" + tid_i_ugn + '\'' +
+            return "Kladdkaka. Ingridienser och info:\n" +
+                    smör + ", " +
+                    strösocker + ", " +
+                    ägg +", " +
+                    vetemjöl +", " +
+                    kakao + ", " +
+                    vaniljsocker + ", " +
+                    salt +
                     ", bestalld=" + bestalld +
-                    ", status='" + status + '\'' +
-                    ", propertyChangeSupport=" + propertyChangeSupport +
-                    '}';
+                    ", status='" + status;
         }
 
 }

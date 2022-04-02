@@ -1,6 +1,5 @@
 package com.yajava.kund;
 
-
 import com.yajava.service.OrderList;
 import com.yajava.tårta.Tårta;
 
